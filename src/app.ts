@@ -13,6 +13,7 @@ import orderRoutes from "./modules/orders/orders.routes";
 import paymentRoutes from "./modules/payments/payments.routes";
 import trackingRoutes from "./modules/tracking/tracking.routes";
 import reviewRoutes from "./modules/reviews/reviews.routes";
+import adminRoutes from "./modules/admin/admin.routes";
 
 dotenv.config();
 
@@ -39,5 +40,6 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/tracking", trackingRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/admin", adminRoutes);
 
 export default app;
