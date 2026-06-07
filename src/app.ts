@@ -7,6 +7,7 @@ import userRoutes from "./modules/users/users.routes";
 import productRoutes from "./modules/products/products.routes";
 import { errorHandler } from "./middleware/errorHandler";
 import categoryRoutes from "./modules/categories/categories.routes";
+import sellerRoutes from "./modules/sellers/sellers.routes";
 
 dotenv.config();
 
@@ -27,5 +28,6 @@ app.get("/health", (req, res) => {
 app.use("/api/products", productRoutes);
 app.use(errorHandler);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/sellers", sellerRoutes);
 
 export default app;
