@@ -4,6 +4,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import userRoutes from "./modules/users/users.routes";
+import productRoutes from "./modules/products/products.routes";
+import { errorHandler } from "./middleware/errorHandler";
 
 dotenv.config();
 
@@ -20,5 +22,8 @@ app.use("/api/users", userRoutes);
 app.get("/health", (req, res) => {
   res.json({ status: "Venda server is running" });
 });
+
+app.use("/api/products", productRoutes);
+app.use(errorHandler);
 
 export default app;
