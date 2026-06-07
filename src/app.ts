@@ -14,6 +14,7 @@ import paymentRoutes from "./modules/payments/payments.routes";
 import trackingRoutes from "./modules/tracking/tracking.routes";
 import reviewRoutes from "./modules/reviews/reviews.routes";
 import adminRoutes from "./modules/admin/admin.routes";
+import aiRoutes from "./modules/ai/ai.routes.";
 
 dotenv.config();
 
@@ -41,5 +42,6 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/tracking", trackingRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/ai", aiRoutes);
 
 export default app;
