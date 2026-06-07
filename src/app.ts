@@ -9,6 +9,7 @@ import { errorHandler } from "./middleware/errorHandler";
 import categoryRoutes from "./modules/categories/categories.routes";
 import sellerRoutes from "./modules/sellers/sellers.routes";
 import cartRoutes from "./modules/cart/cart.routes";
+import orderRoutes from "./modules/orders/orders.routes";
 
 dotenv.config();
 
@@ -31,5 +32,6 @@ app.use(errorHandler);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/sellers", sellerRoutes);
 app.use("/api/cart", cartRoutes);
+app.use("/api/orders", orderRoutes);
 
 export default app;
