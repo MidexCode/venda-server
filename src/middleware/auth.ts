@@ -1,8 +1,21 @@
 import { Request, Response, NextFunction } from "express";
-import { clerkClient, requireAuth } from "@clerk/express";
+import { clerkClient, clerkMiddleware, getAuth } from "@clerk/express";
 import { prisma } from "../config/db";
 
-export const protect = requireAuth();
+export const protect = clerkMiddleware();
+
+export const requireAuth = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void => {
+  const { userId } = getAuth(req);
+  if (!userId) {
+    res.status(401).json({ success: false, message: "Unauthorized" });
+    return;
+  }
+  next();
+};
 
 export const syncUser = async (
   req: Request,
