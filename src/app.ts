@@ -10,6 +10,7 @@ import categoryRoutes from "./modules/categories/categories.routes";
 import sellerRoutes from "./modules/sellers/sellers.routes";
 import cartRoutes from "./modules/cart/cart.routes";
 import orderRoutes from "./modules/orders/orders.routes";
+import paymentRoutes from "./modules/payments/payments.routes";
 
 dotenv.config();
 
@@ -33,5 +34,6 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/sellers", sellerRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/payments", paymentRoutes);
 
 export default app;
